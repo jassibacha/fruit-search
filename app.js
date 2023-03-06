@@ -113,6 +113,9 @@ function showSuggestions(results, inputVal) {
         const regExp = new RegExp(inputVal, 'gi');
         // g = global (look through entire item), i = case insensitive
         // https://stackoverflow.com/q/9833419
+        // old version
+        //const fruit = result.replace(regExp, `<span>${inputVal}</span>`);
+        // swapping to callback function fixed upper/lowercase
         const fruit = result.replace(regExp, (match) => {
             return `<span>${match}</span>`;
         });
